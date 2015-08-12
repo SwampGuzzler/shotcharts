@@ -4,8 +4,11 @@ import pandas as pd
 import seaborn as sns
 
 from IPython.display import display
+import urllib
 from matplotlib.patches import Circle, Rectangle, Arc
+from matplotlib.offsetbox import  OffsetImage
 from alpha import draw_court
+
 
 
 
@@ -22,16 +25,26 @@ shot_df = pd.DataFrame(shots, columns=headers)
 sns.set_style("white")
 sns.set_color_codes()
 
-# matplotlib.pyplot.hexbin(x, y, C=None, gridsize=100, bins=None, xscale=u'linear', yscale=u'linear', extent=None, cmap=None, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, edgecolors=u'none', reduce_C_function=<function mean at 0x7f177f68a140>, mincnt=None, marginals=False, hold=None, **kwargs)
-# matplotlib.pyplot.scatter(x, y, s=20, c=u'b', marker=u'o', cmap=None, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, verts=None, hold=None, **kwargs)
 
+pic = urllib.urlretrieve("http://stats.nba.com/media/players/230x185/101108.png", "101108.png")
+paul_pic = plt.imread(pic[0])
+
+img = OffsetImage(paul_pic, zoom=0.6)
+cmap=plt.cm.YlOrRd_r
+
+plt.axis('off')
 plt.figure(figsize=(6,5.5))
-plt.hexbin(shot_df.LOC_X, shot_df.LOC_Y, gridsize=[20,7])
+cp3 = plt.hexbin(shot_df.LOC_X, shot_df.LOC_Y, gridsize=[20,7])
+
+joint_shot_chart = sns.jointplot(shot_df.LOC_X, shot_df.LOC_Y, stat_func=None,
+                                 kind='hex', space=0, gridsize=[20,7])
 
 
 draw_court(outer_lines=True)
-# plt.axis('off')
+plt.axis('off')
 plt.xlim(-300,300)
 plt.ylim(-100,500)
+# plt.imshow(paul_pic)
+# ax.add_artist(img)
 plt.show()
 

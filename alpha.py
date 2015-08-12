@@ -112,7 +112,7 @@ if __name__ == '__main__':
 	sns.set_style("white")
 	sns.set_color_codes()
 
-	plt.axis('off')
+	
 
 	# matplotlib.pyplot.hexbin(x, y, C=None, gridsize=100, bins=None, xscale=u'linear', yscale=u'linear', extent=None, cmap=None, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, edgecolors=u'none', reduce_C_function=<function mean at 0x7f177f68a140>, mincnt=None, marginals=False, hold=None, **kwargs)
 	# matplotlib.pyplot.scatter(x, y, s=20, c=u'b', marker=u'o', cmap=None, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, verts=None, hold=None, **kwargs)
