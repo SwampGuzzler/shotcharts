@@ -30,7 +30,7 @@ pic = urllib.urlretrieve("http://stats.nba.com/media/players/230x185/101108.png"
 paul_pic = plt.imread(pic[0])
 
 img = OffsetImage(paul_pic, zoom=0.6)
-img.set_offset((300,275))
+img.set_offset((400,350))
 cmap=plt.cm.YlOrRd_r
 
 # plt.axis('off')
@@ -38,7 +38,7 @@ cmap=plt.cm.YlOrRd_r
 # plt.figure(figsize=(6,5.5))
 # cp3 = plt.hexbin(shot_df.LOC_X, shot_df.LOC_Y, gridsize=[20,7])
 
-joint_shot_chart = sns.jointplot(shot_df.LOC_X, shot_df.LOC_Y, stat_func=None,
+joint_shot_chart = sns.jointplot(shot_df.LOC_X, shot_df.LOC_Y, size=7.5, stat_func=None,
                                  kind='hex', space=0, gridsize=[20,7])
 
 ax = joint_shot_chart.ax_joint
