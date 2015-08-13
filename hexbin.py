@@ -39,7 +39,7 @@ cmap=plt.cm.YlOrRd_r
 # cp3 = plt.hexbin(shot_df.LOC_X, shot_df.LOC_Y, gridsize=[20,7])
 
 joint_shot_chart = sns.jointplot(shot_df.LOC_X, shot_df.LOC_Y, size=7.5, stat_func=None,
-                                 kind='hex', space=0, gridsize=[20,7])
+                                 kind='hex', space=0, gridsize=[20,6])
 
 ax = joint_shot_chart.ax_joint
 
@@ -49,9 +49,10 @@ ax.set_ylim(422.5, -47.5)
 # Get rid of axis labels and tick marks
 ax.set_xlabel('')
 ax.set_ylabel('')
+ax.tick_params(labelbottom='off', labelleft='off')
 draw_court(ax)
-ax.set_title('James Harden FGA \n2014-15 Reg. Season', 
-             y=1.2, fontsize=18)
+ax.set_title('Chris Paul FGA \n2014-15 Reg. Season', 
+             y=0.75, fontsize=18)
 ax.add_artist(img)
 
 # draw_court(outer_lines=True)

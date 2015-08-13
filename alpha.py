@@ -59,8 +59,7 @@ def draw_court(ax=None, color='black', lw=2, outer_lines=False):
     # List of the court elements to be plotted onto the axes
     court_elements = [hoop, backboard, outer_box, inner_box, top_free_throw,
                       bottom_free_throw, restricted, corner_three_a,
-                      corner_three_b, three_arc, center_outer_arc,
-                      center_inner_arc]
+                      corner_three_b, three_arc]
 
     if outer_lines:
         # Draw the half court line, baseline and side out bound lines
