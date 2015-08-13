@@ -24,14 +24,14 @@ shot_df = pd.DataFrame(shots, columns=headers)
 
 sns.set_style("white")
 sns.set_color_codes()
-
+# sns.despine(left=True)
 
 pic = urllib.urlretrieve("http://stats.nba.com/media/players/230x185/101108.png", "101108.png")
 paul_pic = plt.imread(pic[0])
 
 img = OffsetImage(paul_pic, zoom=0.6)
 img.set_offset((400,350))
-cmap=plt.cm.YlOrRd_r
+cmap=plt.cm.gist_heat_r
 
 # plt.axis('off')
 # plt.figure(figsize=(12,11))
@@ -39,7 +39,7 @@ cmap=plt.cm.YlOrRd_r
 # cp3 = plt.hexbin(shot_df.LOC_X, shot_df.LOC_Y, gridsize=[20,7])
 
 joint_shot_chart = sns.jointplot(shot_df.LOC_X, shot_df.LOC_Y, size=7.5, stat_func=None,
-                                 kind='hex', space=0, gridsize=[20,6])
+                                 kind='hex', space=0, gridsize=[20,6], color=cmap(.2), cmap=cmap)
 
 ax = joint_shot_chart.ax_joint
 
