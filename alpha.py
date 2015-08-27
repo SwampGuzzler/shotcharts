@@ -73,6 +73,10 @@ def draw_court(ax=None, color='black', lw=2, outer_lines=False):
 
     return ax
 
+
+# [u'GRID_TYPE', u'GAME_ID', u'GAME_EVENT_ID', u'PLAYER_ID', u'PLAYER_NAME', u'TEAM_ID', u'TEAM_NAME', u'PERIOD', u'MINUTES_REMAINING', u'SECONDS_REMAINING', u'EVENT_TYPE', u'ACTION_TYPE', u'SHOT_TYPE', u'SHOT_ZONE_BASIC', u'SHOT_ZONE_AREA', u'SHOT_ZONE_RANGE', u'SHOT_DISTANCE', u'LOC_X', u'LOC_Y', u'SHOT_ATTEMPTED_FLAG', u'SHOT_MADE_FLAG']
+# [u'Shot Chart Detail', u'0021400154', 222, 101108, u'Chris Paul', 1610612746, u'Los Angeles Clippers', 2, 4, 26, u'Made Shot', u'Pullup Jump shot', u'2PT Field Goal', u'Mid-Range', u'Left Side Center(LC)', u'16-24 ft.', 16, -87, 138, 1, 1]
+
 # inital stats Query player == Chris Paul
 # shot_chart_url = 'http://stats.nba.com/stats/shotchartdetail?CFID=33&CFPAR'\
 #                 'AMS=2014-15&ContextFilter=&ContextMeasure=FGA&DateFrom=&D'\
@@ -125,6 +129,9 @@ if __name__ == '__main__':
 	# plt.xlim(-300,300)
 	# plt.ylim(-100,500)
 	# plt.show()
+
+def cp3_url():
+	return 'http://stats.nba.com/stats/shotchartdetail?CFID=33&CFPARAMS=2014-15&ContextFilter=&ContextMeasure=FGA&DateFrom=&DateTo=&GameID=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerID=101108&PlusMinus=N&Position=&Rank=N&RookieYear=&Season=2014-15&SeasonSegment=&SeasonType=Regular+Season&TeamID=0&VsConference=East&VsDivision=&mode=Advanced&showDetails=0&showShots=1&showZones=0'
 
 
 
