@@ -83,14 +83,24 @@ draw_court()
 # plt.xlim(-300,300)
 # plt.ylim(-100,500)
 
+x = []
+for i in shots:
+  if i[20] == 0:
+    x.append('b')
+  else:
+    x.append('r')
+
+bools = np.array(x)
 
 
 fig, ax = plt.subplots()
-
-points = ax.plot(shot_df.LOC_X, shot_df.LOC_Y, 'o', color='b',
+points = ax.plot(shot_df.LOC_X, shot_df.LOC_Y, 'o', color=x,
                  mec='k', ms=15, mew=1, alpha=.6)
+
+# points = ax.plot(shot_df.LOC_X, shot_df.LOC_Y, 'o', color=[timeDiffInt[a] for a in timeDiffInt],
+#                  mec='k', ms=15, mew=1, alpha=.6)
 # ax.grid(True, alpha=0.3)
-print len(shots[3])
+
 labels = []
 for i in shots:
 	label = str(i[10]) + i[10]
